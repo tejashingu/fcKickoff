@@ -6,7 +6,7 @@
 
     <description>Let the game begin!</description>
 
-    <author href="http://www.sushil-s.com/" email="sushil.sud@gmail.com">Sushil Sudhakaran</author>
+    <author href="http://www.flyingcursor.com" email="tejas@flyingcursor.com">Flying Cursor</author>
 
     <preference name="phonegap-version" value="3.3.0" />
     <preference name="fullscreen" value="true" />
@@ -27,10 +27,10 @@
     <gap:plugin name="com.adobe.plugins.gaplugin"  />
     
     <gap:plugin name="nl.x-services.plugins.socialsharing"  />
-    <gap:splash src="splash/ldpi.jpg" gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="splash/mdpi.jpg" gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="splash/hdpi.jpg" gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="splash/xhdpi.jpg" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="splash/ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="splash/mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="splash/hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="splash/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
     
     <icon src="images/logo.png" />
     
