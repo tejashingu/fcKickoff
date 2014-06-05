@@ -6,7 +6,7 @@
 
     <description></description>
 
-    <author href="http://flyingcursor.com" email="tejas@flyingcursor.com">Flying Cursor</author>
+    <author href="http://flyingcursor.com/" email="tejas@flyingcursor.com">Flying Cursor</author>
 
     <preference name="phonegap-version" value="3.3.0" />
     <preference name="fullscreen" value="true" />
@@ -24,15 +24,15 @@
         <param name="APP_NAME" value="BrazilKickOffApp2014" />
     </gap:plugin>
     
-    <gap:plugin name="com.adobe.plugins.gaplugin" >
+    <gap:plugin name="com.adobe.plugins.gaplugin" version="2.1.5" >
     
-    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+    <gap:plugin name="nl.x-services.plugins.socialsharing" version="2.3" />
     <gap:splash src="splash/ldpi.jpg" gap:platform="android" gap:density="ldpi" />
     <gap:splash src="splash/mdpi.jpg" gap:platform="android" gap:density="mdpi" />
     <gap:splash src="splash/hdpi.jpg" gap:platform="android" gap:density="hdpi" />
     <gap:splash src="splash/xhdpi.jpg" gap:platform="android" gap:density="xhdpi" />
     
-    <icon src="icon.png" />
+    <icon src="imsges/icon.png" />
     
 
 </widget>
