@@ -2,13 +2,13 @@
 <widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.standardchartered.gooddeedmarathon" versionCode = "13" version = "1.0.0">
 
 
-    <name>Fifa Kick Off 2014</name>
+    <name>BrazilKickOffApp2014</name>
 
     <description></description>
 
-    <author href="http://www.sushil-s.com/" email="sushil.sud@gmail.com">Sushil Sudhakaran</author>
+    <author href="http://flyingcursor.com" email="tejas@flyingcursor.com">Flying Cursor</author>
 
-    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="phonegap-version" value="3.3.0" />
     <preference name="fullscreen" value="true" />
 
     <access origin="*"/>
@@ -23,7 +23,16 @@
         <param name="APP_ID" value="261787254027306" />
         <param name="APP_NAME" value="BrazilKickOffApp2014" />
     </gap:plugin>
-    <icon src="images/logo.png" />
+    
+    <gap:plugin name="com.adobe.plugins.gaplugin" >
+    
+    <gap:plugin name="nl.x-services.plugins.socialsharing" version="2.3" />
+    <gap:splash src="splash/ldpi.jpg" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="splash/mdpi.jpg" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="splash/hdpi.jpg" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="splash/xhdpi.jpg" gap:platform="android" gap:density="xhdpi" />
+    
+    <icon src="icon.png" />
     
 
 </widget>
