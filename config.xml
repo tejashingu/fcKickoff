@@ -24,7 +24,7 @@
         <param name="APP_NAME" value="BrazilKickOffApp2014" />
     </gap:plugin>
     
-    <gap:plugin name="com.adobe.plugins.gaplugin" version="2.1.5" />
+    <gap:plugin name="com.adobe.plugins.gaplugin"  />
     
     <gap:plugin name="nl.x-services.plugins.socialsharing"  />
     <gap:splash src="splash/ldpi.jpg" gap:platform="android" gap:density="ldpi" />
