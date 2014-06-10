@@ -11,8 +11,4 @@ brazilKickOff.config(function (ezfbProvider) {
             ezfbAsyncInit();
         });
     });
-})
-
-brazilKickOff.run(function (ezfb) {
-    ezfb.init();
 });
