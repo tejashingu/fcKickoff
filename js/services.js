@@ -1,35 +1,4 @@
 var brazilKickOffser = angular.module('brazilKickOff.services', []);
-
-brazilKickOff.factory('brazilFbLogin' function(){
-    var isLoggedIn = 0;
-    return {
-        fbLoggedIn: function () {
-            
-            try {
-                FB.init({appId: "261787254027306", nativeInterface: CDV.FB, useCachedDialogs: false});
-                console.log("Success");
-            } catch (e) {
-                console.log(e);
-            }
-            FB.login(
-
-                function (response) {
-
-                FB.api('/me', function (response) {
-                    if (response.error) {
-                        isLoggedIn = 0;
-                        return isLoggedIn;
-                    } else {
-                        isLoggedIn = 1;
-                        return isLoggedIn;
-                    }
-                }, {
-                    scope: "email,publish_actions"
-                });
-            });
-        }
-    };
-});
         
 
 brazilKickOffser.factory('brazildb', function () {

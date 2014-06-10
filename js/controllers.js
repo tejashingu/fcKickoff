@@ -1,9 +1,64 @@
-var brazilKickOffCon = angular.module('brazilKickOff.controllers',['brazilKickOff.services']);
+var brazilKickOffCon = angular.module('brazilKickOff.controllers',['ezfb','brazilKickOff.services']);
 
-brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'brazilFbLogin', function( $scope, brazilFbLogin ){
+brazilKickOffCon.controller( 'brazilFbLogin',  function( $scope, ezfb, $window, $location ){
     this.isLoggedIn = 0;
-    this.isLoggedIn =  brazilFbLogin.fbLoggedIn;
-}]);
+    updateLoginStatus(updateApiMe);
+
+    $scope.login = function () {
+        /**
+         * Calling FB.login with required permissions specified
+         * https://developers.facebook.com/docs/reference/javascript/FB.login/v2.0
+         */
+        ezfb.login(function (res) {
+          /**
+           * no manual $scope.$apply, I got that handled
+           */
+          if (res.authResponse) {
+                updateLoginStatus(updateApiMe);
+          }
+        }, {scope: 'email'});
+    };
+    
+    $scope.logout = function () {
+        /**
+         * Calling FB.logout
+         * https://developers.facebook.com/docs/reference/javascript/FB.logout
+         */
+        ezfb.logout(function () {
+            updateLoginStatus(updateApiMe);
+        });
+    };
+    
+    /**
+    * For generating better looking JSON results
+    */
+    var autoToJSON = ['loginStatus', 'apiMe'];
+    angular.forEach(autoToJSON, function (varName) {
+        $scope.$watch(varName, function (val) {
+            $scope[varName + 'JSON'] = JSON.stringify(val, null, 2);
+        }, true);
+    });
+
+    /**
+      * Update loginStatus result
+      */
+    function updateLoginStatus(more) {
+         ezfb.getLoginStatus(function (res) {
+             $scope.loginStatus = res;
+
+             (more || angular.noop)();
+         });
+     }
+
+     /**
+      * Update api('/me') result
+      */
+     function updateApiMe() {
+         ezfb.api('/me', function (res) {
+             $scope.apiMe = res;
+         });
+     }
+});
 
 brazilKickOffCon.controller( 'brazildbcon', [ '$scope', 'brazildb', function( $scope, brazildb ){
     var isdata=brazildb.getisdata();

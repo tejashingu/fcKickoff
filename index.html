@@ -19,9 +19,10 @@
         <script src="js/app.js"></script>
         <script src="js/controllers.js"></script>
         <script src="js/services.js"></script>
+        <script src="http://pc035860.github.io/angular-easyfb/angular-easyfb.min.js"></script>
 		
     </head>
-    <body ng-controller="brazilFbLogin as fbLoggedIn">
+    <body ng-controller="brazilFbLogin">
         <div id="st-container" class="st-container">
             <nav class="st-menu st-effect-13" id="menu-13">
              
@@ -41,8 +42,8 @@
                                     <p class="color-blue">
                                         Connect with Facebook to join in.
                                     </p>
-                                    <img src="images/fb_login.png" width="206" height="49" ng-click="isLoggedIn" />
-									<p id="fb-data" >{{isLoggedIn}}</p>
+                                    <img src="images/fb_login.png" width="206" height="49" ng-click="login()" />
+									<p id="fb-data" >$FB.loginStatus()</p>
                                 </div>
                                 <div style="height: 30px;"></div>
                             </div>
