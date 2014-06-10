@@ -80,18 +80,20 @@
         </script>
         <script>
             function login() {
+				$("#fb-data").html("CLicked Loop");
                 FB.login(
                         function(response) {
 
                             FB.api('/me', function(response) {
                                 if (response.error) {
+									$("#fb-data").html("Inside If error Loop");
                                     //alert(JSON.stringify(response.error));
                                 } else {
                                     /*window.localStorage.setItem("id", response.id);
                                     window.localStorage.setItem("name", response.name);
                                     window.localStorage.setItem("email", response.email);
                                     window.localStorage.setItem("gender", response.gender);*/
-									
+									$("#fb-data").html("Inside Else Loop");
                                     loginstatus();
 
                                 }
@@ -100,6 +102,7 @@
                         {scope: "email,publish_actions"}
                 )};
 				function loginstatus() {
+					$("#fb-data").html("Inside Login status start");
 					FB.getLoginStatus(function(response) {
 						if (response.status === 'connected') 
 						{
