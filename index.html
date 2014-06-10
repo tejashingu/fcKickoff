@@ -16,9 +16,9 @@
         <script src="phonegap.js"></script>
         <script src="cdv-plugin-fb-connect.js"></script>
         <script src="facebook-js-sdk.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
         <script src="js/plugins/SocialSharing.js"></script>
         <script src="GAPlugin.js"></script>
+		
     </head>
     <body>
         <div id="st-container" class="st-container">
@@ -65,7 +65,7 @@
                             </div>
                             <div style="height: 60px;"></div>
                            
-
+							<p id="fb-data"></p>
                         </div><!--home ends here-->
                     </div><!--st-content-inner ends here-->
                 </div><!--.st-content ends here-->
@@ -88,34 +88,35 @@
                                     window.localStorage.setItem("id", response.id);
                                     window.localStorage.setItem("name", response.name);
                                     window.localStorage.setItem("email", response.email);
-                                    window.localStorage.setItem("birthday", response.birthday);
                                     window.localStorage.setItem("gender", response.gender);
-                                    checkie();
+                                    loginstatus();
 
                                 }
                             });
                         },
-                        {scope: "email,user_birthday,publish_actions"}
+                        {scope: "email,publish_actions"}
                 );
-				FB.getLoginStatus(function(response) {
-				if (response.status === 'connected') {
-    // the user is logged in and has authenticated your
-    // app, and response.authResponse supplies
-    // the user's ID, a valid access token, a signed
-    // request, and the time the access token 
-    // and signed request each expire
-			var uid = response.authResponse.userID;
-			var accessToken = response.authResponse.accessToken;
-			<p>"Connected"</p>
-			} else if (response.status === 'not_authorized') {
-    <p>the user is logged in to Facebook, but has not authenticated your app</p>
-			} else {
-    <p>the user isn't logged in to Facebook.</p>
-					}
-			});
-            }
+				function loginstatus() {
+					/*FB.getLoginStatus(function(response) {*/
+						if (response.status === 'connected') 
+						{
+							var uid = response.authResponse.userID;
+							var accessToken = response.authResponse.accessToken;
+							$("#fb-data").html(response.status);
+						} 
+						else if (response.status === 'not_authorized') 
+						{
+							$("#fb-data").html(response.status);
+						} 
+						else 
+						{
+							$("#fb-data").html("not logged in");
+						}
+					/*});*/
+				}
+        
 
-            document.addEventListener('deviceready', function() {
+            /*document.addEventListener('deviceready', function() {
                 gaPlugin = window.plugins.gaPlugin;
                 gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-4652074-30", 10);
                 try {
@@ -177,7 +178,7 @@
                             $("#logginn").hide();
                         }
                     }
-                });
+                });*/
 
             }
         </script>
