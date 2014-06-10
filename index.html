@@ -40,8 +40,10 @@
                                         Connect with Facebook to join in.
                                     </p>
                                     <img src="images/fb_login.png" width="206" height="49" onclick="login();" />
+									<p id="fb-data"></p>
                                 </div>
                                 <div style="height: 30px;"></div>
+								
 
                                 
 
@@ -65,7 +67,7 @@
                             </div>
                             <div style="height: 60px;"></div>
                            
-							<p id="fb-data"></p>
+							
                         </div><!--home ends here-->
                     </div><!--st-content-inner ends here-->
                 </div><!--.st-content ends here-->
@@ -85,10 +87,11 @@
                                 if (response.error) {
                                     //alert(JSON.stringify(response.error));
                                 } else {
-                                    window.localStorage.setItem("id", response.id);
+                                    /*window.localStorage.setItem("id", response.id);
                                     window.localStorage.setItem("name", response.name);
                                     window.localStorage.setItem("email", response.email);
-                                    window.localStorage.setItem("gender", response.gender);
+                                    window.localStorage.setItem("gender", response.gender);*/
+									
                                     loginstatus();
 
                                 }
