@@ -1,63 +1,42 @@
 var brazilKickOffCon = angular.module('brazilKickOff.controllers',['ezfb','brazilKickOff.services']);
 
-brazilKickOffCon.controller( 'brazilFbLogin',  function( $scope, ezfb, $window, $location ){
-    this.isLoggedIn = 0;
-    updateLoginStatus(updateApiMe);
-
+brazilKickOffCon.controller( 'brazilFbLogin',  function( $scope, ezfb ){
+    ezfbAsyncInit(); 
+    $scope.init = true;
+    updateLoginStatus();
+ 
     $scope.login = function () {
-        /**
-         * Calling FB.login with required permissions specified
-         * https://developers.facebook.com/docs/reference/javascript/FB.login/v2.0
-         */
         ezfb.login(function (res) {
-          /**
-           * no manual $scope.$apply, I got that handled
-           */
-          if (res.authResponse) {
-                updateLoginStatus(updateApiMe);
-          }
+            if(res.status == 'connected') {
+                updateLoginStatus(updateMe);
+            }
         }, {scope: 'email'});
     };
-    
+
     $scope.logout = function () {
-        /**
-         * Calling FB.logout
-         * https://developers.facebook.com/docs/reference/javascript/FB.logout
-         */
         ezfb.logout(function () {
-            updateLoginStatus(updateApiMe);
+            updateLoginStatus(updateMe);
         });
     };
-    
-    /**
-    * For generating better looking JSON results
-    */
-    var autoToJSON = ['loginStatus', 'apiMe'];
-    angular.forEach(autoToJSON, function (varName) {
-        $scope.$watch(varName, function (val) {
-            $scope[varName + 'JSON'] = JSON.stringify(val, null, 2);
-        }, true);
-    });
 
-    /**
-      * Update loginStatus result
-      */
-    function updateLoginStatus(more) {
-         ezfb.getLoginStatus(function (res) {
-             $scope.loginStatus = res;
+    $scope.me = function() {
+        updateMe();
+    };
 
-             (more || angular.noop)();
-         });
-     }
+    function updateMe() {
+        ezfb.api('/me', function(response) {
+            $scope.user = response;
+        });
+    }
 
-     /**
-      * Update api('/me') result
-      */
-     function updateApiMe() {
-         ezfb.api('/me', function (res) {
-             $scope.apiMe = res;
-         });
-     }
+    function updateLoginStatus() {
+        ezfb.getLoginStatus(function (res) {
+            $scope.loginStatus = res;
+            if(res.status == 'connected') {
+                updateMe();
+            }
+        });
+    }
 });
 
 brazilKickOffCon.controller( 'brazildbcon', [ '$scope', 'brazildb', function( $scope, brazildb ){

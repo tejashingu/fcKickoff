@@ -6,9 +6,7 @@ brazilKickOff.config(function (ezfbProvider) {
         useCachedDialogs: false
     });
 
-    ezfbProvider.setLoadSDKFunction(function ($document, ezfbAsyncInit) {
-        $document.on('deviceready', function () {
-            ezfbAsyncInit();
-        });
+    ezfbProvider.setLoadSDKFunction(function ($rootScope, ezfbAsyncInit) {
+        $rootScope.ezfbAsyncInit = ezfbAsyncInit;
     });
 });
