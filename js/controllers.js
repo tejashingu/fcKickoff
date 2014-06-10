@@ -1,6 +1,7 @@
 var brazilKickOffCon = angular.module('brazilKickOff.controllers',['brazilKickOff.services']);
 
 brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'brazilFbLogin', function( $scope, brazilFbLogin ){
+    this.isLoggedIn = 0;
     this.isLoggedIn =  brazilFbLogin.fbLoggedIn;
 }]);
 

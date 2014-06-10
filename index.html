@@ -10,12 +10,11 @@
         <meta name="msapplication-tap-highlight" content="no">
 
 
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="phonegap.js"></script>
         <script src="cdv-plugin-fb-connect.js"></script>
         <script src="facebook-js-sdk.js"></script>
         <script src="GAPlugin.js"></script>
+        
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
         <script src="js/app.js"></script>
         <script src="js/controllers.js"></script>
@@ -57,7 +56,7 @@
         </div><!--st-container ends here-->
    
         <script>
-            function login() {
+            /*function login() {
 				$("#fb-data").html("CLicked Loop");
                 FB.login(
                         function(response) {
@@ -68,10 +67,10 @@
                                     //alert(JSON.stringify(response.error));
 									} 
 									else {
-                                    /*window.localStorage.setItem("id", response.id);
+                                    window.localStorage.setItem("id", response.id);
                                     window.localStorage.setItem("name", response.name);
                                     window.localStorage.setItem("email", response.email);
-                                    window.localStorage.setItem("gender", response.gender);*/
+                                    window.localStorage.setItem("gender", response.gender);
 									$("#fb-data").html("Inside Else Loop");
                                     loginstatus();
 
@@ -107,12 +106,12 @@
 					} catch (e) {
 						   alert(e);
 					}
-					/*if (window.localStorage.getItem("id") != null && window.localStorage.getItem("name") != null && window.localStorage.getItem("email") != null && window.localStorage.getItem("birthday") != null) {
-						$("#").
-					}*/
+					if (window.localStorage.getItem("id") != null && window.localStorage.getItem("name") != null && window.localStorage.getItem("email") != null && window.localStorage.getItem("birthday") != null) {
+                    
+					}
 
 				}, false);
-
+*/
             /*document.addEventListener('deviceready', function() {
                 gaPlugin = window.plugins.gaPlugin;
                 gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-4652074-30", 10);
