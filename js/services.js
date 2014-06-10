@@ -1,4 +1,27 @@
 var brazilKickOffser = angular.module('brazilKickOff.services', []);
+
+brazilKickOff.factory('brazilFbLogin' function(){
+    var isLoggedIn = 0;
+    return {
+        fbLoggedIn: function () {
+        FB.login(
+
+            function (response) {
+
+                FB.api('/me', function (response) {
+                    if (response.error) {
+                        isLoggedIn = 0;
+                        return isLoggedIn;
+                    } else {
+                        isLoggedIn = 1;
+                        return isLoggedIn;
+                    }
+                }, {
+                    scope: "email,publish_actions"
+                });
+        });
+});
+
 brazilKickOffser.factory('brazildb',function(){
 
 	var isdata=0;

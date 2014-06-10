@@ -1,5 +1,9 @@
 var brazilKickOffCon = angular.module('brazilKickOff.controllers',['brazilKickOff.services']);
 
+brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'brazilFbLogin', function( $scope, brazilFbLogin ){
+    this.isLoggedIn =  brazilFbLogin.fbLoggedIn;
+}]);
+
 brazilKickOffCon.controller( 'brazildbcon', [ '$scope', 'brazildb', function( $scope, brazildb ){
     var isdata=brazildb.getisdata();
     if(isdata==0)
@@ -8,9 +12,8 @@ brazilKickOffCon.controller( 'brazildbcon', [ '$scope', 'brazildb', function( $s
         db.transaction(function(tx){
             
         var noteams=0;
-        tx.executeSql("SELECT *FROM 
         
-        })
+        });
     }
     }]);
 /*
