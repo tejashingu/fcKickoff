@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.fc.kickoff" class="com.fc.kickoff.ProjectActivity " versionCode = "13" version = "1.0.0">
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.fc.kickoff" class="com.fc.kickoff.brazilkickoffapp" versionCode = "13" version = "1.0.0">
 
 
     <name>BrazilKickOffApp2014</name>
@@ -21,7 +21,7 @@
 
     <gap:plugin name="com.phonegap.plugins.facebookconnect">
         <param name="APP_ID" value="261787254027306" />
-        <param name="APP_NAME" value="BrazilKickOffApp2014" />
+        <param name="APP_NAME" value="brazilkickoffapp" />
     </gap:plugin>
     
     <gap:plugin name="com.adobe.plugins.gaplugin"  />
