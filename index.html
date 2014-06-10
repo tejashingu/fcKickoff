@@ -95,9 +95,9 @@
                             });
                         },
                         {scope: "email,publish_actions"}
-                );
+                )};
 				function loginstatus() {
-					/*FB.getLoginStatus(function(response) {*/
+					FB.getLoginStatus(function(response) {
 						if (response.status === 'connected') 
 						{
 							var uid = response.authResponse.userID;
@@ -112,11 +112,11 @@
 						{
 							$("#fb-data").html("not logged in");
 						}
-					/*});*/
+					});
 				}
         
 
-            /*document.addEventListener('deviceready', function() {
+            /*5document.addEventListener('deviceready', function() {
                 gaPlugin = window.plugins.gaPlugin;
                 gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-4652074-30", 10);
                 try {
@@ -178,9 +178,9 @@
                             $("#logginn").hide();
                         }
                     }
-                });*/
+                })};*/
 
-            }
+            
         </script>
     </body>
 </html>
