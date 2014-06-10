@@ -1,10 +1,12 @@
 var brazilKickOffCon = angular.module('brazilKickOff.controllers',['ezfb','brazilKickOff.services']);
 
-brazilKickOffCon.controller( 'brazilFbLogin',  function( $scope, ezfb ){
-    ezfbAsyncInit(); 
-    $scope.init = true;
+brazilKickOffCon.controller( 'brazilFbLogin', [ function( $scope, ezfb ){
+     
+    $scope.init = false;
+    
     updateLoginStatus();
- 
+
+    
     $scope.login = function () {
         ezfb.login(function (res) {
             if(res.status == 'connected') {
@@ -37,7 +39,7 @@ brazilKickOffCon.controller( 'brazilFbLogin',  function( $scope, ezfb ){
             }
         });
     }
-});
+}]);
 
 brazilKickOffCon.controller( 'brazildbcon', [ '$scope', 'brazildb', function( $scope, brazildb ){
     var isdata=brazildb.getisdata();
