@@ -24,11 +24,6 @@
     </head>
     <body ng-controller="brazilFbLogin">
         
-        <div class="demo" ng-show="!isLoggedIn">
-            <img src="images/fb-login.png" width="206" height="49" ng-click="ezfbAsyncInit(); init=true; login();" />
-        </div><!--demo ends here-->
-        
-        
         <!-- Sidebars -->
         <div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar" ng-show="isLoggedIn" >
 
@@ -49,10 +44,10 @@
             </div>
         </div>
 
-        <div class="app" ng-show="isLoggedIn" >
+        <div class="app" >
 
             <!-- Navbars -->
-            <div class="navbar navbar-app navbar-absolute-top" >
+            <div class="navbar navbar-app navbar-absolute-top" ng-show="isLoggedIn" >
 
                 <div class="navbar-brand navbar-brand-center bar-kickoff" yield-to="title">
                     <h4>Brazil<span>KickOff</span>2014</h4>
