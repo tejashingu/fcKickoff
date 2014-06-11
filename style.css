@@ -177,6 +177,10 @@ body {
     transition: z-index 400ms ease;
 }
 
+.sidebar-left .scrollable {
+    margin-top: 10px;
+}
+
 /*nav bar and menu ends here*/
 
 .button-facebook {
@@ -201,7 +205,10 @@ body {
 .scrollable {
     padding: 0;
     margin-bottom: 20px;
-    margin-top: 50px;
+}
+
+.has-navbar-top .app-body {
+    padding-top: 50px;
 }
 
 #groups .col-sm-4 {
