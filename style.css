@@ -285,6 +285,10 @@ p.venue {
     float:none;
 }
 
+@media (max-width: 321px){
+    margin-right: 10px;
+}
+
 @media (max-width: 767px){
     .cus-border-left .col-xs-6 {
         padding-left: 0;
