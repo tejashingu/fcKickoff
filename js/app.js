@@ -17,3 +17,12 @@ brazilKickOff.config(function (ezfbProvider) {
         $rootScope.ezfbAsyncInit = ezfbAsyncInit;
     });
 });
+
+brazilKickOff.config( function($routeProvider){ 
+    $routeProvider.when('/', {
+        templateUrl: "templates/home.html"
+    });
+    $routeProvider.when('/groups', {
+        templateUrl: "templates/groups.html"
+    });
+});
