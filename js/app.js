@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 document.addEventListener('deviceready', function onDeviceReady() {
             angular.bootstrap(document, ['brazilKickOff']);
         }, false);
 var brazilKickOff = angular.module('brazilKickOff', ['ngRoute', 'ngTouch', 'brazilKickOff.controllers','ezfb','brazilKickOff.services']);
 
+=======
+var brazilKickOff = angular.module('brazilKickOff', ['brazilKickOff.controllers','ezfb','brazilKickOff.services']);
+>>>>>>> FETCH_HEAD
 brazilKickOff.config(function (ezfbProvider) {
     ezfbProvider.setInitParams({
         appId: '261787254027306',
@@ -12,14 +16,5 @@ brazilKickOff.config(function (ezfbProvider) {
 
     ezfbProvider.setLoadSDKFunction(function ($rootScope, ezfbAsyncInit) {
         $rootScope.ezfbAsyncInit = ezfbAsyncInit;
-    });
-});
-
-brazilKickOff.config( function($routeProvider){
-    $routeProvider.when('/', {
-        templateUrl: "templates/home.html"
-    });
-    $routeProvider.when('/groups', {
-        templateUrl: "templates/groups.html"
     });
 });
