@@ -5,66 +5,6 @@
     src: url("fonts/LEVIBRUSH.TTF");
 }
 
-/*bootstrap starts here*/
-
-/* columns of same height styles */
-.container-xs-height {
-    display:table;
-    padding-left:0px;
-    padding-right:0px;
-}
-.row-xs-height {
-    display:table-row;
-}
-.col-xs-height {
-    display:table-cell;
-    float:none;
-}
-@media (min-width: 768px) {
-    .container-sm-height {
-        display:table;
-        padding-left:0px;
-        padding-right:0px;
-    }
-    .row-sm-height {
-        display:table-row;
-    }
-    .col-sm-height {
-        display:table-cell;
-        float:none;
-    }
-}
-@media (min-width: 992px) {
-    .container-md-height {
-        display:table;
-        padding-left:0px;
-        padding-right:0px;
-    }
-    .row-md-height {
-        display:table-row;
-    }
-    .col-md-height {
-        display:table-cell;
-        float:none;
-    }
-}
-@media (min-width: 1200px) {
-    .container-lg-height {
-        display:table;
-        padding-left:0px;
-        padding-right:0px;
-    }
-    .row-lg-height {
-        display:table-row;
-    }
-    .col-lg-height {
-        display:table-cell;
-        float:none;
-    }
-}
-
-/*bootstrap ends here*/
-
 body {
     position: relative;
 }
@@ -257,15 +197,6 @@ body {
     font-family: 'Roboto Condensed';
 }
 
-.cus-upcoming-matches-cont {
-    background: #f7f7f7;
-}
-
-.cus-upcoming-matches-cont .col-sm-8 {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
 .cus-upcoming-matches-cont .col-sm-8 h3 {
     margin-bottom: 15px;
     font-size: 18px;
@@ -281,11 +212,6 @@ body {
     margin-right: 10px;
 }
 
-.cus-upcoming-matches-cont .col-sm-4 {
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
 .cus-upcoming-matches-cont .col-sm-4 > div > div.col-sm-6:first-child {
     border-left: 1px solid #808080;
 }
@@ -295,14 +221,121 @@ body {
     color: #303030;
 }
 
+.carousel, .carousel-inner, .carousel-inner > .item {
+    height: auto;
+    background: #f7f7f7;
+}
+
+.carousel-example-content {
+    margin: 15px 0;
+}
+
+.cus-upcoming-matches-cont 
+.col-xs-height.col-sm-height {
+    vertical-align: middle;
+}
+
+.cus-border-left {
+    border-left: 1px #808080 solid;
+}
+
 /*home page ends here*/
 
 /*Set Alarm Class*/
 
 .setAlarm {
+    background: transparent url("images/sprites.png") no-repeat scroll -60px 0;
     width: 22px;
     height: 17px;
-    background: transparent no-repeat
+    display: block;
+    cursor: pointer;
+}
+
+.setAlarm:hover, .setAlarm:focus, .setAlarm.active {
+    background: transparent url("images/sprites.png") no-repeat scroll -60px -30px;
 }
 
 /*Set Alarm Class ends here*/
+
+/*venue starts here*/
+
+p.venue {
+    font-family: "Roboto Condensed";
+    color: #949494;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/*venue ends here*/
+
+
+/*bootstrap starts here*/
+
+/* columns of same height styles */
+.container-xs-height {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+}
+.row-xs-height {
+    display:table-row;
+}
+.col-xs-height {
+    display:table-cell;
+    float:none;
+}
+
+@media (max-width: 767px){
+    .cus-border-left .col-xs-6 {
+        padding-left: 0;
+    }
+    
+    .cus-border-left {
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-sm-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-sm-height {
+        display:table-row;
+    }
+    .col-sm-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 992px) {
+    .container-md-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-md-height {
+        display:table-row;
+    }
+    .col-md-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 1200px) {
+    .container-lg-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-lg-height {
+        display:table-row;
+    }
+    .col-lg-height {
+        display:table-cell;
+        float:none;
+    }
+}
+
+/*bootstrap ends here*/
