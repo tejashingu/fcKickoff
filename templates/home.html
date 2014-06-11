@@ -1,11 +1,11 @@
 <div id='home' class="scrollable">
     <div class="scrollable-content">
-       <div class="container" ng-show="!isloggedIn">
+       <div class="container" ng-show="isLoggedIn == 0">
             <div class="demo" >
                 <img src="images/fb-login.png" width="206" height="49" ng-click="ezfbAsyncInit(); init=true; login();" />
             </div><!--demo ends here-->
        </div>
-        <div class='container' ng-show="isLoggedIn">
+        <div class='container' ng-show="isLoggedIn == 1">
             <div class='row'>
                 
                 <div class='col-sm-12 cus-upcoming-matches'>

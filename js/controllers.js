@@ -3,7 +3,7 @@ var brazilKickOffCon = angular.module('brazilKickOff.controllers',['ezfb','brazi
 brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', function( $scope, ezfb ){
      
     $scope.init = false;
-    $scope.isLoggedIn = false;
+    $scope.isLoggedIn = 0;
     
     updateLoginStatus();
 
@@ -37,7 +37,7 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', function( $sco
             $scope.loginStatus = res;
             if(res.status == 'connected') {
                 updateMe();
-                $scope.isLoggedIn = true;
+                $scope.isLoggedIn = 1;
             }
         });
     }

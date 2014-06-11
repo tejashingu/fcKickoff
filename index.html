@@ -25,7 +25,7 @@
     <body ng-controller="brazilFbLogin">
         
         <!-- Sidebars -->
-        <div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar" ng-show="isLoggedIn" >
+        <div class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar" ng-show="isLoggedIn == 1" >
 
             <div class="scrollable">
                 <div class="scrollable-content">
@@ -47,7 +47,7 @@
         <div class="app" >
 
             <!-- Navbars -->
-            <div class="navbar navbar-app navbar-absolute-top" ng-show="isLoggedIn" >
+            <div class="navbar navbar-app navbar-absolute-top" ng-show="isLoggedIn == 1" >
 
                 <div class="navbar-brand navbar-brand-center bar-kickoff" yield-to="title">
                     <h4>Brazil<span>KickOff</span>2014</h4>
