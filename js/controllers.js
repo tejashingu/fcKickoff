@@ -4,6 +4,8 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', function( $sco
      
     $scope.init = false;
     
+    $scope.isLoggedIn = false;
+    
     updateLoginStatus();
 
     
@@ -36,23 +38,12 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', function( $sco
             $scope.loginStatus = res;
             if(res.status == 'connected') {
                 updateMe();
+                $scope.isLoggedIn = true;
             }
         });
     }
 }]);
 
-brazilKickOffCon.controller( 'brazildbcon', [ '$scope', 'brazildb', function( $scope, brazildb ){
-    var isdata=brazildb.getisdata();
-    if(isdata==0)
-    {
-        var db=brazildb.getdb
-        db.transaction(function(tx){
-            
-        var noteams=0;
-        
-        });
-    }
-    }]);
 /*
 brazilKickOffCon.controller( 'selectAllTeam', [ '$scope', 'selectallteamservice', function( $scope, selectallteamservice ){
 	var userInfo = this;

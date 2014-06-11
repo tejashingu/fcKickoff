@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.fc.kickoff" class="com.fc.kickoff.brazilkickoffapp" versionCode = "13" version = "1.0.0">
 
-
     <name>BrazilKickOffApp2014</name>
 
     <description>Let the game begin!</description>
@@ -17,9 +16,7 @@
     <preference name="android-minSdkVersion" value="14" />
 
     <gap:platform name="android" />
-    <gap:platform name="ios" />
-  
-
+    
     <gap:plugin name="com.phonegap.plugins.facebookconnect">
         <param name="APP_ID" value="261787254027306" />
         <param name="APP_NAME" value="brazilkickoffapp" />
