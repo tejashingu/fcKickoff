@@ -1,3 +1,6 @@
+document.addEventListener('deviceready', function onDeviceReady() {
+            angular.bootstrap(document, ['brazilKickOff']);
+        }, false);
 var brazilKickOff = angular.module('brazilKickOff', ['ngRoute', 'ngTouch', 'brazilKickOff.controllers','ezfb','brazilKickOff.services']);
 
 brazilKickOff.config(function (ezfbProvider) {

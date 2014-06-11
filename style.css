@@ -299,12 +299,3 @@ body {
 }
 
 /*Set Alarm Class ends here*/
-
-/* Demo page starts here*/
-.btn-cus-fb {
-    background: transparent url("images/fb_login.php") no-repeat scroll top center;
-    width: 280px;
-    height: 58px;
-    border: none;
-    text-indent: -9999px;
-}
