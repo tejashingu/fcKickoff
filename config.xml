@@ -17,6 +17,7 @@
     <preference name="android-minSdkVersion" value="14" />
 
     <gap:platform name="android" />
+    <gap:platform name="ios" />
   
 
     <gap:plugin name="com.phonegap.plugins.facebookconnect">
