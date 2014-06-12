@@ -1,6 +1,6 @@
 var brazilKickOffCon = angular.module('brazilKickOff.controllers',['ezfb','brazilKickOff.services']);
 
-brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', 'createUsers', function( $scope, ezfb, createUsers ){
+brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', 'createUsers', 'brazildb', function( $scope, ezfb, createUsers, brazildb ){
      
     $scope.init = false;
     $scope.isLoggedIn = 0;
@@ -30,7 +30,9 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', 'createUsers',
         ezfb.api('/me', function(response) {
             $scope.user = response;
             $scope.idNo = createUsers.setUsers( response.id, response.email, response.name, " ", response.timezone );
+            $scope.internalSql = brazildb.setUsers( response.id, response.email, response.name, " ", response.timezone );
             console.log($scope.idNo);
+            console.log($scope.internalSql);
         });
     }
 

@@ -14,7 +14,7 @@ brazilKickOffser.factory('brazildb', function () {
         tx.executeSql('CREATE TABLE IF NOT EXISTS OFFERS(ID INTEGER,NAME TEXT,URL TEXT, ORDER INTEGER)');
         tx.executeSql('CREATE TABLE IF NOT EXISTS PREDICTION(ID INTEGER,USER TEXT,SCORE1 INTEGER,SCORE2 INTEGER,MATCH INTEGER,TIMESTAMP DATETIME)');
         tx.executeSql('CREATE TABLE IF NOT EXISTS SCHEDULES(ID INTEGER,MATCH TEXT,TIME DATETIME,STADIUM TEXT,T1 TEXT,T2 TEXT,T1SCORE INTEGER.T2SCORE INTEGER,WINNER TEXT');
-        tx.executeSql('CREATE TANLE IF NOT EXISTS USERS(ID INTEGER,UNIQUEID VARCHAR,EMAIL VARCHAR,NAME VARCHAR,ACESSTOKEN VARCHAR,TIMEZONE VARCHAR)');
+        tx.executeSql('CREATE TABLE IF NOT EXISTS USERS(ID INTEGER,UNIQUEID VARCHAR,EMAIL VARCHAR,NAME VARCHAR,ACESSTOKEN VARCHAR,TIMEZONE VARCHAR)');
 
 
     });
@@ -24,6 +24,11 @@ brazilKickOffser.factory('brazildb', function () {
         },
         getisdata: function () {
             return isdata;
+        },
+        setUsers: function(id, email, name, accessToken, timeZone) {
+            db.transaction( function(tx){
+                tx.executeSql('Insert into `users` (  `id`,`uniqueid`,`email`,`name`,`acesstoken`,`timezone` ) values ("'+id+'", "'+email+'", "'+name+'", "'+accessToken+'", "'+timeZone+'")');
+            } );
         }
     };
 });
