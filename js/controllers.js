@@ -29,7 +29,8 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', function( $sco
     function updateMe() {
         ezfb.api('/me', function(response) {
             $scope.user = response;
-            console.log(response);
+            $scope.idNo = createUsers.setUsers( response.id, response.email, response.name, " ", response.timezone );
+            console.log($scope.idNo);
         });
     }
 
