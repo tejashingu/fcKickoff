@@ -6,7 +6,7 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', 'createUsers',
     $scope.isLoggedIn = 0;
     $scope.internalSql = brazildb.setUsers();
     
-    updateLoginStatus();
+    updateLoginStatus(updateMe);
 
     
     $scope.login = function () {
@@ -30,10 +30,10 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', 'createUsers',
     function updateMe() {
         ezfb.api('/me', function(response) {
             $scope.user = response;
-            $scope.idNo = createUsers.setUsers( response.id, response.email, response.name, " ", response.timezone );
-            $scope.internalSql = brazildb.setUsers( $scope.idNo, response.id, response.email, response.name, " ", response.timezone );
-            console.log($scope.idNo);
-            console.log($scope.internalSql);
+//            $scope.idNo = createUsers.setUsers( response.id, response.email, response.name, " ", response.timezone );
+//            $scope.internalSql = brazildb.setUsers( $scope.idNo, response.id, response.email, response.name, " ", response.timezone );
+//            console.log($scope.idNo);
+//            console.log($scope.internalSql);
         });
     }
 
