@@ -4,9 +4,8 @@ brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', 'createUsers',
      
     $scope.init = false;
     $scope.isLoggedIn = 0;
-    $scope.internalSql = brazildb.setUsers();
     
-    updateLoginStatus(updateMe);
+    console.log(updateLoginStatus(updateMe));
 
     
     $scope.login = function () {
