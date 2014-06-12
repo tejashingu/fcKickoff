@@ -3,6 +3,8 @@ document.addEventListener('deviceready', function onDeviceReady() {
     angular.bootstrap(document, ['brazilKickOff']);
 }, false);
 
+var brazilKickOff = angular.module('brazilKickOff', ['ngRoute', 'ngTouch','mobile-angular-ui', 'brazilKickOff.controllers','ezfb','brazilKickOff.services']);
+
 brazilKickOff.config(function (ezfbProvider) {
     ezfbProvider.setInitParams({
         appId: '261787254027306',
@@ -15,7 +17,6 @@ brazilKickOff.config(function (ezfbProvider) {
     });
 });
 
-var brazilKickOff = angular.module('brazilKickOff', ['ngRoute', 'ngTouch','mobile-angular-ui', 'brazilKickOff.controllers','ezfb','brazilKickOff.services']);
 
 brazilKickOff.config( function($routeProvider){ 
     $routeProvider.when('/', {
