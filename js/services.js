@@ -28,7 +28,7 @@ brazilKickOffser.factory('brazildb', function () {
     };
 });
 
-brazilKickOffser.factory( 'createUsers' function($http){
+brazilKickOffser.factory( 'createUsers',[ '$http', function($http){
     var createUsers = {};
     createUsers.setUsers = function(id, email, name, accessToken, timeZone){
         return $http({
@@ -42,7 +42,7 @@ brazilKickOffser.factory( 'createUsers' function($http){
             }
         });
     }
-} );
+}]);
     
 /*
 

@@ -1,6 +1,6 @@
 var brazilKickOffCon = angular.module('brazilKickOff.controllers',['ezfb','brazilKickOff.services']);
 
-brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', function( $scope, ezfb ){
+brazilKickOffCon.controller( 'brazilFbLogin', [ '$scope', 'ezfb', 'createUsers', function( $scope, ezfb, createUsers ){
      
     $scope.init = false;
     $scope.isLoggedIn = 0;
