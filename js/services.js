@@ -29,19 +29,20 @@ brazilKickOffser.factory('brazildb', function () {
 });
 
 brazilKickOffser.factory( 'createUsers',[ '$http', function($http){
-    var createUsers = {};
-    createUsers.setUsers = function(id, email, name, accessToken, timeZone){
-        return $http({
-            url: 'http://flyingcursor.com/brazil_kickoff/index.php/site/setUsers/',
-            params : {
-                'id': id,
-                'email': email,
-                'name': name,
-                'accessToken': accessToken,
-                'timeZone': timeZone
-            }
-        });
-    }
+    return {
+        setUsers: function(id, email, name, accessToken, timeZone){
+            return $http({
+                url: 'http://flyingcursor.com/brazil_kickoff/index.php/site/setUsers/',
+                params : {
+                    'id': id,
+                    'email': email,
+                    'name': name,
+                    'accessToken': accessToken,
+                    'timeZone': timeZone
+                }
+            });
+        }
+    };
 }]);
     
 /*
